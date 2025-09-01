@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Profile
+
+@{
+    ViewData["Title"] = "Michael Pham";
+    ViewData["language"] = "DK";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center hero-row">
+        <div class="hero-text text-center text-md-start">
+            <h2 class="display-4 mb-2">Hello I'm <span style="color: green; ">Michael Pham</span></h2>
+            <h5 class="text-muted">Fullstack developer | IT-Specialist | .NET | SQL</h5>
+        </div>
+
+        <div class="hero-image mt-4 mt-md-0 ms-md-4">
+            <img id="CV" class="img-thumbnail" src="/images/CV Picture.jpg" alt="Michael Pham">
+        </div>
+    </div>
 </div>
+<section>
+    <div class="d-flex align-items-center gap-4 ">
+        <div class="d-flex gap-3 align-items-center social-icons">
+            <h1 style="color:lightblue;" class="display-5">Socials|</h1>
+            <a class="social-btn" href="#" aria-label="Linkedin"><img class="social-svg"
+                    src="/images/linkedin.svg"></img></a>
+            <a class="social-btn" href="#" aria-label="Github"><img class="social-svg"
+                    src="/images/github.svg"></img></a>
+            <a class="social-btn" href="#" aria-label="Facebook"><img class="social-svg" src="/images/fb.svg"></img></a>
+        </div>
+    </div>
+</section>
