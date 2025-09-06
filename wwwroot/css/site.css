@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
-html {
-  font-size: 14px;
-}
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -21,7 +17,6 @@ html {
 
 html {
   position: relative;
-  min-height: 100%;
 }
 
 body {
@@ -30,9 +25,9 @@ body {
     "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  color: #f0f7f4;
   background: linear-gradient(135deg, #0b0c0d 0%, #121416 100%);
 }
-
 
 h1,
 h2,
@@ -85,42 +80,431 @@ h3 {
 }
 
 :root {
-        --accent: #f0f7f4;
-        --accent-weak: rgba(253, 255, 254, 0.74);
-    }
+  --accent: #f0f7f4;
+  --accent-weak: rgba(253, 255, 254, 0.74);
+}
 
-    .social-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        color: var(--accent);
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255);
-        box-shadow:
-            0 0 0 6px rgba(0, 0, 0, 0.35) inset,
-            0 0 12px rgba(248, 248, 248, 0.04);
-        transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
-        text-decoration: none;
-    }
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: var(--accent);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255);
+  box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.35) inset,
+    0 0 12px rgba(248, 248, 248, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+  text-decoration: none;
+}
 
-    .social-btn .bi {
-        font-size: 1.02rem;
-    }
+.social-btn .bi {
+  font-size: 1.02rem;
+}
 
-    .social-btn:hover,
-    .social-btn:focus {
-        transform: translateY(-3px);
-        border-color: var(--accent);
-        box-shadow:
-            0 0 0 8px rgba(253, 255, 254, 0.06),
-            0 0 18px rgba(212, 216, 214, 0.14);
-    }
+.social-btn:hover,
+.social-btn:focus {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 8px rgba(253, 255, 254, 0.06),
+    0 0 18px rgba(212, 216, 214, 0.14);
+}
 
-    .social-svg {
-        width: 25px;
-        height: 25px;
-        display: block;
-    }
+.social-svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+.tools {
+  width: 50px;
+  height: 50px;
+  filter: invert(1) grayscale(1);
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section {
+  scroll-margin-top: 60px;
+}
+
+.stylish-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid #17721f;
+  color: #349b56 !important;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.08);
+}
+.stylish-btn.active,
+.stylish-btn:hover,
+.stylish-btn:focus {
+  background: #17721f;
+  color: #fff !important;
+  border-color: #83ccb6;
+  text-decoration: none;
+}
+
+#hero,
+#scrollspy-tools,
+#Job {
+  scroll-margin-top: 90px;
+  min-height: 100vh;
+}
+
+.language-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid #17721f;
+  color: #349b56 !important;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.language-btn:hover,
+.language-btn:focus {
+  background: #17721f;
+  color: #fff !important;
+  border-color: #83ccb6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.15);
+}
+
+.language-btn i {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    display: none;
+  }
+
+  #portfolio-nav {
+    justify-content: center !important;
+  }
+}
+
+#portfolio-nav.sticky-top {
+  z-index: 1030;
+  background: linear-gradient(135deg, #0b0c0d 0%, #121416 100%) !important;
+}
+
+/* Timeline */
+/* The actual timeline (the vertical ruler) */
+.main-timeline {
+  position: relative;
+  z-index: 1;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #515152;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 0;
+  animation: moveline 6s linear forwards;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+  z-index: 2;
+}
+@keyframes movedown {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.timeline:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.timeline:nth-child(3) {
+  animation-delay: 4s;
+}
+
+/* The circles on the timeline */
+
+.timeline-dot {
+  position: absolute;
+  top: 10px; 
+  width: 32px;
+  height: 32px;
+  z-index: 10;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+}
+.timeline-dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Modern timeline cards styling */
+.timeline .card {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(145deg, rgba(17, 17, 17, 0.9) 0%, rgba(30, 30, 30, 0.8) 100%);
+  border: 1px solid rgba(52, 155, 86, 0.2);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(52, 155, 86, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.timeline .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #17721f 0%, #349b56 50%, #83ccb6 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline .card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(52, 155, 86, 0.4);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 4px 16px rgba(52, 155, 86, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.timeline .card:hover::before {
+  opacity: 1;
+}
+
+.timeline .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Timeline date styling - highly visible */
+.timeline-date {
+  color: #83ccb6;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(52, 155, 86, 0.1);
+  border: 1px solid rgba(52, 155, 86, 0.3);
+  border-radius: 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(52, 155, 86, 0.1);
+}
+
+.timeline .card-body h3,
+.timeline-title {
+  color: #f0f7f4;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #f0f7f4 0%, #83ccb6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.timeline .card-body h4 {
+  color: #349b56;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  position: relative;
+}
+
+.timeline .card-body h4::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #17721f, transparent);
+  border-radius: 1px;
+}
+
+.timeline .card-body p {
+  color: rgba(240, 247, 244, 0.9);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Enhanced timeline dots */
+.timeline-dot {
+  position: absolute;
+  top: 10px; 
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  background: linear-gradient(145deg, #111 0%, #1a1a1a 100%);
+  border: 2px solid #349b56;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    0 0 0 4px rgba(52, 155, 86, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-dot:hover {
+  transform: scale(1.1);
+  border-color: #83ccb6;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.6),
+    0 0 0 6px rgba(52, 155, 86, 0.2);
+}
+
+/* Dot for left side */
+.timeline.left .timeline-dot {
+  right: -20px; /* Half the dot's width (40px), aligns with the timeline line */
+  left: auto;
+}
+
+/* Dot for right side */
+.timeline.right .timeline-dot {
+  left: -20px; /* Half the dot's width (40px), aligns with the timeline line */
+  right: auto;
+}
+
+/* Place the container to the left */
+.left {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 2;
+  right: 30px;
+  border: medium solid rgba(52, 155, 86, 0.3);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(52, 155, 86, 0.3);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 2;
+  left: 30px;
+  border: medium solid rgba(52, 155, 86, 0.3);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(52, 155, 86, 0.3) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline::after {
+    left: 31px;
+    position:absolute;
+    z-index: 0;
+  }
+
+  /* Full-width containers */
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline::before {
+    left: 60px;
+    border: medium solid rgba(52, 155, 86, 0.3);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgba(52, 155, 86, 0.3) transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .left::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}

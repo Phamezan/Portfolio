@@ -12,19 +12,43 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Michael Pham</a>
-                <button class="nav-link btn btn-dark"><span>About</span></button>
-        </nav>
-    </header>
+    <nav id="portfolio-nav"
+        class="navbar px-3 mb-3 container d-flex justify-content-between align-items-center sticky-top py-3">
+        <ul class="nav gap-2">
+            <li class="nav-item">
+                <a class="nav-link stylish-btn" href="#hero">Michael Pham</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link stylish-btn" href="#scrollspy-tools">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link stylish-btn" href="#job">Job</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link stylish-btn" href="#projects">Projects</a>
+            </li>
+        </ul>
+
+        <div class="language-toggle">
+            @{
+                var currentLanguage = ViewData["CurrentLanguage"]?.ToString() ?? "EN";
+                var toggleLanguage = currentLanguage == "EN" ? "DK" : "EN";
+                var toggleText = currentLanguage == "EN" ? "Dansk" : "English";
+            }
+            <a href="/?language=@toggleLanguage" class="btn btn-outline-primary btn-sm language-btn">
+                <i data-lucide="globe"></i>
+                <span class="ms-1">@toggleText</span>
+            </a>
+        </div>
+    </nav>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main" class="pb-3" data-bs-spy="scroll" data-bs-smooth-scroll="true" data-bs-target="#portfolio-nav"
+            tabindex="0">
             @RenderBody()
         </main>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

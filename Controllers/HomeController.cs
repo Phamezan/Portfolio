@@ -7,28 +7,20 @@ namespace Portfolie.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-    private readonly ProfileRepository profileRepository = new ProfileRepository();
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ProfileRepository profileRepository = new ProfileRepository();
 
     public IActionResult Index(string language)
     {
-        // Default to EN if language is null or not found
         var profileLanguage = profileRepository.GetProfileByLanguage(language);
         if (profileLanguage == null)
         {
-            profileLanguage = profileRepository.GetProfileByLanguage("EN");
+            profileLanguage = profileRepository.GetProfileByLanguage("DK");
+            language = "DK";
         }
-        return View(profileLanguage);
-    }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        ViewData["CurrentLanguage"] = language ?? "EN";
+
+        return View(profileLanguage);
     }
 }

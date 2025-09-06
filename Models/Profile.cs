@@ -8,8 +8,9 @@ namespace Portfolie.Models
 {
     public class Profile
     {
-        public string Name { get; set; } = string.Empty;
+        public string Language { get; set; } = string.Empty;
         public string HeroText { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        public List<Job> JobExperiences { get; set; } = new List<Job>();
     }
 }

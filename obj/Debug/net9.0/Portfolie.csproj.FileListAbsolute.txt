@@ -23,7 +23,6 @@ C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\scopedcss\bundle\Portfolie.styles.css
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\scopedcss\projectbundle\Portfolie.bundle.scp.css
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\1xuppvqa84-61n19gt1b8.gz
-C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\p4pwpp2jfx-xtxxf3hu2r.gz
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\78g2kjw0vx-bqjiyaj88i.gz
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\s88b3cfhoe-c2jlpeoesf.gz
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\j587um9z4o-erw9l3u2r3.gz
@@ -94,4 +93,13 @@ C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\refint\Portfolie.dll
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\Portfolie.pdb
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\Portfolie.genruntimeconfig.cache
 C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\ref\Portfolie.dll
-C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\smq5wbhmoi-nkmrj5gskd.gz
+C:\Users\Pham2\Desktop\Portfolie\bin\Debug\net9.0\package-lock.json
+C:\Users\Pham2\Desktop\Portfolie\bin\Debug\net9.0\package.json
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\p4pwpp2jfx-b8010lma3s.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\2pa5tkejfh-bs0o4ep3xo.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\xktr6fat8z-xe7d0m4khe.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\4vbhmyhggf-ryai1d3gxb.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\xhhp9i0xox-v6mchoj3wg.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\kfq1cgotwc-s36dqmp3jy.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\smq5wbhmoi-lyetjl7lok.gz
+C:\Users\Pham2\Desktop\Portfolie\obj\Debug\net9.0\compressed\fya5a1g7el-69sgvac7xk.gz
