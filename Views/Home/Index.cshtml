@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Michael Pham";
     ViewData["language"] = "DK";
+    var descriptionWithEmoji = Model.Description.Replace(
+    "{wave}",
+    "<span class=\"wave-emoji\" title=\"Hello!\">👋</span>"
+    );
 }
 
 <div id="hero" class="container">
@@ -22,17 +26,24 @@
         </div>
     </div>
 </div>
-<hr>
-<section id="scrollspy-tools" class="container d-flex flex-column py-3" style="height: 100vh;">
-    <div id="about" class="container py-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <h2 class="mb-4">About Me</h2>
-                <p class="fs-4">@Model.Description</p>
+<div class="stylish-divider"></div>
+<section id="about" class="container d-flex flex-column py-5" style="height: 100vh;">
+    <div class="py-5">
+        <div class="col-lg-10 col-xl-9">
+            @if (Model.Language == "DK")
+            {
+                <h1>Om Mig</h1>
+            }
+            else
+            {
+                <h1>About Me</h1>
+            }
+            <div class="mt-5">
+                <h5 id="about-content">@Html.Raw(descriptionWithEmoji)</h5>
             </div>
         </div>
     </div>
-    <div class="d-flex flex-row flex-wrap gap-2 align-items-center mt-auto">
+    <div class="d-flex flex-row flex-wrap gap-2 align-items-center mt-5 ">
         <div class="d-flex align-items-center p-2">
             <img class="tools" src="/images/javascript.svg">
             <h4 class="m-1">Javascript</h4>
@@ -63,10 +74,17 @@
         </div>
     </div>
 </section>
-<hr>
+<div class="stylish-divider"></div>
 
 <div id="job" class="container py-3">
-    <h1 class="mb-4">Job Experience</h1>
+    @if (Model.Language == "DK")
+    {
+        <h1 class="mb-4">Erhvervserfaring</h1>
+    }
+    else
+    {
+        <h1 class="mb-4">Job Experience</h1>
+    }
     <section>
         <div class="container py-5">
             <div class="main-timeline">
@@ -101,8 +119,64 @@
         </div>
     </section>
 </div>
-<hr>
+<div class="stylish-divider"></div>
 
-<div id="projects" class="container py-3">
-    <h1>Projects</h1>
+<div id="projects" class="container py-5">
+    @if (Model.Language == "DK")
+    {
+        <h1 class="mb-5 text-center">Projekter</h1>
+    }
+    else
+    {
+        <h1 class="mb-5 text-center">Projects</h1>
+    }
+    <div class="row g-4">
+        @foreach (var project in Model.Projects)
+        {
+            <div class="col-lg-6 col-xl-4">
+                <div class="project-card h-100">
+                    <div class="project-image">
+                        @if (!string.IsNullOrEmpty(project.Image))
+                        {
+                            <img src="@project.Image" alt="@project.Title" class="img-fluid" />
+                        }
+                        else
+                        {
+                            <div class="project-placeholder">
+                                <i data-lucide="code"></i>
+                            </div>
+                        }
+                        <div class="project-overlay">
+                            @if (!string.IsNullOrEmpty(project.GithubUrl))
+                            {
+                                <a href="@project.GithubUrl" class="btn project-btn project-btn-public" target="_blank"
+                                    aria-label="View on GitHub">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="btn project-btn project-btn-private" aria-label="Private Repository">
+                                    <i data-lucide="lock"></i>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">@project.Title</h3>
+                        <p class="project-description">@project.Description</p>
+                        @if (project.Technologies.Any())
+                        {
+                            <div class="project-technologies">
+                                @foreach (var tech in project.Technologies)
+                                {
+                                    <span class="tech-badge">@tech</span>
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>

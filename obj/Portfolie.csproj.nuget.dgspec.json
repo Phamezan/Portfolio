@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pham2\\Desktop\\Portfolie\\Portfolie.csproj": {}
+    "C:\\Users\\Pham2\\desktop\\Portfolie\\Portfolie.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pham2\\Desktop\\Portfolie\\Portfolie.csproj": {
+    "C:\\Users\\Pham2\\desktop\\Portfolie\\Portfolie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pham2\\Desktop\\Portfolie\\Portfolie.csproj",
+        "projectUniqueName": "C:\\Users\\Pham2\\desktop\\Portfolie\\Portfolie.csproj",
         "projectName": "Portfolie",
-        "projectPath": "C:\\Users\\Pham2\\Desktop\\Portfolie\\Portfolie.csproj",
+        "projectPath": "C:\\Users\\Pham2\\desktop\\Portfolie\\Portfolie.csproj",
         "packagesPath": "C:\\Users\\Pham2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pham2\\Desktop\\Portfolie\\obj\\",
+        "outputPath": "C:\\Users\\Pham2\\desktop\\Portfolie\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\VS cache\\NuGetPackages"

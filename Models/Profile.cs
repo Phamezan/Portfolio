@@ -12,5 +12,6 @@ namespace Portfolie.Models
         public string HeroText { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public List<Job> JobExperiences { get; set; } = new List<Job>();
+        public List<Project> Projects { get; set; } = new List<Project>();
     }
 }
